@@ -1,2 +1,9 @@
 The terraform state pull command and the terraform state push command can directly read and write entire state files from and to the configured backend. 
 You might need this for obtaining or restoring a state backup.
+terraform{
+  required_version= ">=0.12"
+}
+
+module "<name of the module>"{
+  source= "<path of the module>"
+}
