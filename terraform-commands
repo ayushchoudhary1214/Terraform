@@ -47,3 +47,6 @@ variable "project_environment" {
     environment = "dev"
   }
 }
+
+As terraform output values help us to print the attributes reference values but sometimes you can not print all the values on console.
+So to prevent from printing sensitive values on the console you need to set sensitive = true
