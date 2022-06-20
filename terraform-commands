@@ -1,4 +1,5 @@
 https://jhooq.com/terraform-input-variables/
+terraform plan -var-file= "stage.tfvars"
 The terraform state pull command and the terraform state push command can directly read and write entire state files from and to the configured backend. 
 You might need this for obtaining or restoring a state backup.
 terraform{
