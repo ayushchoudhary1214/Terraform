@@ -72,3 +72,25 @@ dynamic "ingress" {
          cidr_blocks = ["0.0.0.0/0"]
       }
    }
+
+terraform plan -var-file=stage.tfvars
+
+#TO PREVENT DESTROY OF INFRASTRUCTURE
+lifecycle {
+      create_before_destroy = true
+      #prevent_destroy       = true
+      #ignore_changes        = [tags]
+   }
+#TO SPIN UP INFRA IN MULTIPLE AWS REGIONS
+provider "aws" {
+  alias  = "north"
+  region = "eu-north-1"
+  access_key = "AKIATQ37NXB2HS7IVM5R"
+  secret_key = "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"
+}
+
+provider "aws" {
+   region     = "eu-central-1"
+   access_key = "AKIATQ37NXB2HS7IVM5R"
+   secret_key = "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"
+}
